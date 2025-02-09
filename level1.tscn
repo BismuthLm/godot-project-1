@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbtt6wx0v2syk"]
+[gd_scene load_steps=2 format=3 uid="uid://dbtt6wx0v2syk"]
 
-[ext_resource type="Texture2D" uid="uid://c5am77726q8ip" path="res://graphics/player/player.png" id="1_kf777"]
-[ext_resource type="Texture2D" uid="uid://0pgdxtak2vvq" path="res://graphics/projectiles/blue.png" id="2_cbpt4"]
+[ext_resource type="Texture2D" uid="uid://crnbm4wie3rjl" path="res://icon.svg" id="1_a3lop"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="PlayerImage" type="Sprite2D" parent="."]
-texture = ExtResource("1_kf777")
-
-[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
-position = Vector2(20, -205)
-texture = ExtResource("2_cbpt4")
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(311, 257)
+texture = ExtResource("1_a3lop")
