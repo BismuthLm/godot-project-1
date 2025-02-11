@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://clq110ws08cm1"]
+[gd_scene load_steps=4 format=3 uid="uid://clq110ws08cm1"]
 
 [ext_resource type="Texture2D" uid="uid://crnbm4wie3rjl" path="res://icon.svg" id="1_a3lop"]
+[ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_jbu1y"]
+[ext_resource type="Script" path="res://scenes/Icon.gd" id="2_u16yt"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_jbu1y")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("1_a3lop")
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 128)
+script = ExtResource("2_u16yt")
