@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbtt6wx0v2syk"]
+[gd_scene load_steps=5 format=3 uid="uid://cx306aw7ie20u"]
 
 [ext_resource type="Texture2D" uid="uid://crnbm4wie3rjl" path="res://icon.svg" id="1_a3lop"]
+[ext_resource type="Texture2D" uid="uid://c7b4jgfyg3sj0" path="res://graphics/car/main.png" id="2_dfv2m"]
+[ext_resource type="PackedScene" uid="uid://cdhjjvcaienx3" path="res://player.tscn" id="3_ds5ia"]
+[ext_resource type="PackedScene" uid="uid://bjhwyh2kd0xtb" path="res://scenes/levels/bed.tscn" id="4_mhs2h"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(355, 290)
+position = Vector2(210, 123)
 texture = ExtResource("1_a3lop")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="Car" type="Sprite2D" parent="Icon"]
+position = Vector2(572, 134)
+texture = ExtResource("2_dfv2m")
+
+[node name="Player" parent="." instance=ExtResource("3_ds5ia")]
+
+[node name="Bed" parent="Player" instance=ExtResource("4_mhs2h")]
