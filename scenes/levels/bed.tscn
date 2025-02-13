@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7akcd15rg6pb" path="res://graphics/objects/pillow_large.png" id="2_r286t"]
 [ext_resource type="Texture2D" uid="uid://c2av43tgb02r5" path="res://graphics/objects/pillow_small.png" id="3_ph2bx"]
 
-[node name="Bed" type="Node2D"]
+[node name="Bed" type="StaticBody2D"]
 
 [node name="Bed" type="Sprite2D" parent="."]
 texture = ExtResource("1_7dkqn")
@@ -18,3 +18,5 @@ texture = ExtResource("2_r286t")
 position = Vector2(108, 3.05176e-05)
 rotation = -0.0349066
 texture = ExtResource("3_ph2bx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
