@@ -1,18 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://clq110ws08cm1"]
+[gd_scene load_steps=4 format=3 uid="uid://clq110ws08cm1"]
 
 [ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_bs1eu"]
-[ext_resource type="Texture2D" uid="uid://crnbm4wie3rjl" path="res://icon.svg" id="2_b23ip"]
-[ext_resource type="Script" path="res://scenes/levels/Icon.gd" id="3_h76r1"]
-[ext_resource type="PackedScene" uid="uid://cvpirlkb55yy7" path="res://scenes/levels/player.tscn" id="4_opnh5"]
+[ext_resource type="Texture2D" uid="uid://cfnjdyelyj5t3" path="res://graphics/objects/gate.png" id="2_h8daf"]
+[ext_resource type="PackedScene" uid="uid://cvpirlkb55yy7" path="res://scenes/player/player.tscn" id="4_opnh5"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bs1eu")
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_b23ip")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 128)
-script = ExtResource("3_h76r1")
+[node name="Gate" type="Sprite2D" parent="."]
+position = Vector2(491, -92)
+texture = ExtResource("2_h8daf")
 
 [node name="player" parent="." instance=ExtResource("4_opnh5")]
 position = Vector2(590, 288)
