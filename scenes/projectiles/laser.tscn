@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://brcfshb2w4fop"]
+
+[ext_resource type="Texture2D" uid="uid://0pgdxtak2vvq" path="res://graphics/projectiles/blue.png" id="1_46p78"]
+
+[node name="Laser" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_46p78")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(0, -80, 2, -81, 5, -78, 7, -75, 7, -73, 8, -66, 8, -62, 8, -55, 8, -46, 8, -35, 7, -28, 6, -21, 5, -17, 5, -13, 5, -7, 3, 7, 1, 11, -1, 5, -2, -7, -4, -21, -6, -30, -6, -39, -6, -49, -6, -60, -5, -65, -5, -72, -3, -77)
