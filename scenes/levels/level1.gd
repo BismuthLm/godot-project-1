@@ -6,8 +6,9 @@ func _on_gate_player_entered_gate(body):
 	print(body)
 
 func _on_player_laser():
-	print("laser from level")
-
+	var laser = laser_scene.instantiate()
+	laser.position = $player.position
+	add_child(laser)
 
 func _on_player_grenade():
 	print("grenade from level")

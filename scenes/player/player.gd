@@ -13,6 +13,9 @@ func _process(_delta):
 	move_and_slide()
 	
 	if Input.is_action_pressed("primary action") and can_laser:
+		var laser_markers = $LaserStartPositions.get_children()
+		var selected_laser = laser_markers[randi() % laser_markers.size()]
+		print(selected_laser)
 		can_laser = false
 		$Timer.start()
 		laser.emit()
