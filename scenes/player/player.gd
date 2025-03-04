@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 signal laser(pos)
-signal grenade
+signal grenade(pos)
 
 var can_laser: bool = true
 var can_grenade: bool = true
@@ -22,11 +22,11 @@ func _process(_delta):
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		can_grenade = false
 		$GrenadeReloadTimer.start()
-		grenade.emit()
+		var pos = $LaserStartPositions.get_children()[0].global_position
+		grenade.emit(pos)
 
 func _on_timer_timeout():
 	can_laser = true
-
 
 func _on_grenade_reload_timer_timeout():
 	can_grenade = true

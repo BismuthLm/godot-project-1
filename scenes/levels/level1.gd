@@ -12,7 +12,9 @@ func _on_player_laser(pos):
 	laser.position = pos
 	$projectiles.add_child(laser)
 	
-
-func _on_player_grenade():
-	var grenade = grenade_scene.instantiate()
+func _on_player_grenade(pos):
+	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = pos
+	grenade.linear_velocity = Vector2.UP * 100
+	$projectiles.add_child(grenade)
+	
