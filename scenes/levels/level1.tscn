@@ -14,8 +14,6 @@ position = Vector2(510, -416)
 position = Vector2(624, 568)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position_smoothing_enabled = true
-position_smoothing_speed = 0.1
 
 [node name="projectiles" type="Node2D" parent="."]
 
