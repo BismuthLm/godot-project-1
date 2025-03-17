@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://0pgdxtak2vvq" path="res://graphics/projectiles/blue.png" id="1_46p78"]
 
 [node name="Laser" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_4qx0v")
 speed = 2000
 
