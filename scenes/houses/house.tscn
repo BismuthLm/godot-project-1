@@ -124,6 +124,7 @@ texture_region_size = Vector2i(390, 390)
 3:6/0 = 0
 3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_0/angular_velocity = 0.0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.9038, -195, 21.0806, -195, 20.9922, -22.0529, 195, -22.0529, 195, 21.9645, 20.9922, 21.9645, 20.9038, 195, -20.9038, 195, -20.9922, 21.7877, -195, 21.8761, -195, -21.8761, -20.9922, -21.9645)
 5:6/0 = 0
 5:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:6/0/physics_layer_0/angular_velocity = 0.0
@@ -139,9 +140,11 @@ texture_region_size = Vector2i(390, 390)
 2:7/0 = 0
 2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:7/0/physics_layer_0/angular_velocity = 0.0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 20.9038, -195, -21.0806, 195, -20.9038, 195, 20.9038, 21.7877, 20.9922, 21.8761, 195, -21.8761, 195, -21.9645, 20.9922)
 3:7/0 = 0
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.9038, -195, 21.0806, -195, 20.9038, 195, -20.9038, 195, -20.9922, 21.7877, -195, 21.8761, -195, -21.8761, -20.9922, -21.9645)
 4:7/0 = 0
 4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_0/angular_velocity = 0.0
@@ -161,9 +164,11 @@ texture_region_size = Vector2i(390, 390)
 2:8/0 = 0
 2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:8/0/physics_layer_0/angular_velocity = 0.0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.9038, 195, -21.0806, 195, -20.9038, -195, 20.9038, -195, 20.9922, -21.7877, 195, -21.8761, 195, 21.8761, 20.9922, 21.9645)
 3:8/0 = 0
 3:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:8/0/physics_layer_0/angular_velocity = 0.0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -20.9038, 195, 21.0806, -195, 20.9038, -195, -20.9038, -21.7877, -20.9922, -21.8761, -195, 21.8761, -195, 21.9645, -20.9922)
 5:8/0 = 0
 5:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:8/0/physics_layer_0/angular_velocity = 0.0
@@ -171,8 +176,8 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_wkb7s"]
 tile_size = Vector2i(390, 390)
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 11
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 14
 sources/0 = SubResource("TileSetAtlasSource_qqb84")
 
 [node name="House" type="Area2D"]

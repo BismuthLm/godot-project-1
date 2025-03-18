@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clq110ws08cm1"]
+[gd_scene load_steps=18 format=3 uid="uid://clq110ws08cm1"]
 
 [ext_resource type="Script" path="res://scenes/levels/level1.gd" id="1_bs1eu"]
 [ext_resource type="Texture2D" uid="uid://bs2dci00hpkn2" path="res://graphics/ground/stones.png" id="2_3pigc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b051fgio1t3vs" path="res://graphics/tilesets/outside_walls.png" id="9_fl4kt"]
 [ext_resource type="Texture2D" uid="uid://bo1ujjvfqy6qw" path="res://graphics/tilesets/soil.png" id="10_bsean"]
 [ext_resource type="PackedScene" uid="uid://bbc405gyv6iod" path="res://scenes/houses/house.tscn" id="11_jo0sg"]
+[ext_resource type="PackedScene" uid="uid://cbadqsev3w2hr" path="res://scenes/objects/steam_vent.tscn" id="12_xvyrs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gq6vi"]
 resource_name = "walls"
@@ -77,12 +78,6 @@ position = Vector2(-2866, 745)
 scale = Vector2(0.783137, 0.81932)
 texture = ExtResource("5_su6e6")
 
-[node name="Decoration9" type="Sprite2D" parent="Ground"]
-modulate = Color(0.972549, 0.85098, 0.588235, 1)
-position = Vector2(-1052, 2330)
-scale = Vector2(0.783137, 0.81932)
-texture = ExtResource("5_su6e6")
-
 [node name="Decoration2" type="Sprite2D" parent="Ground"]
 modulate = Color(0.972549, 0.85098, 0.588235, 1)
 position = Vector2(1863, 774)
@@ -105,12 +100,6 @@ texture = ExtResource("5_su6e6")
 modulate = Color(0.972549, 0.85098, 0.588235, 1)
 position = Vector2(2536, 362.5)
 scale = Vector2(1.0229, 1.12075)
-texture = ExtResource("5_su6e6")
-
-[node name="Decoration5" type="Sprite2D" parent="Ground"]
-modulate = Color(0.972549, 0.85098, 0.588235, 1)
-position = Vector2(-87.0001, 1839)
-scale = Vector2(0.783137, 0.81932)
 texture = ExtResource("5_su6e6")
 
 [node name="TileMap" type="TileMap" parent="Ground"]
@@ -138,7 +127,7 @@ position = Vector2(-3239, 1135)
 texture = ExtResource("4_jk1uu")
 
 [node name="Moss2" type="Sprite2D" parent="Ground"]
-position = Vector2(-1138, 1851)
+position = Vector2(-1102, 76)
 texture = ExtResource("5_rck1q")
 
 [node name="Moss11" type="Sprite2D" parent="Ground"]
@@ -207,8 +196,11 @@ scale = Vector2(1.52809, 1.45604)
 texture = ExtResource("8_wlvpw")
 
 [node name="House" parent="Ground" instance=ExtResource("11_jo0sg")]
-position = Vector2(267, 4493)
+position = Vector2(741, 3831)
 rotation = -2.49757
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("12_xvyrs")]
+position = Vector2(-152, 644)
 
 [node name="Gate" parent="." instance=ExtResource("2_swppr")]
 position = Vector2(510, -416)
