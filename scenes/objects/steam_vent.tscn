@@ -35,4 +35,4 @@ texture = ExtResource("1_l5def")
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_kscjs")
 texture = ExtResource("2_eb27s")
-lifetime = 5.0
+lifetime = 1.5
