@@ -20,7 +20,7 @@ shape = SubResource("CapsuleShape2D_lkoju")
 texture = ExtResource("1_wpjt8")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 0.266667, 0.266667, 1)
+color = Color(0.364706, 0.694118, 0.941176, 1)
 energy = 7.5
 shadow_enabled = true
 shadow_filter = 2
