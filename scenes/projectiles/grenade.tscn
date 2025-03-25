@@ -1,14 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd7mdr6o6mb5u"]
+[gd_scene load_steps=8 format=3 uid="uid://cd7mdr6o6mb5u"]
 
 [ext_resource type="Texture2D" uid="uid://b2hetkfy0jgec" path="res://graphics/projectiles/grenade.png" id="1_dv4fy"]
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_h5g41"]
+[ext_resource type="Texture2D" uid="uid://k7xmd2exelin" path="res://graphics/explosions/explosion_3.png" id="3_qkqhk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cjneq"]
 friction = 10.0
 bounce = 0.4
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e78xd"]
-radius = 30.0
+[sub_resource type="Animation" id="Animation_dsqif"]
+resource_name = "Explosion"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nq5c2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffgdp"]
+_data = {
+"Explosion": SubResource("Animation_dsqif"),
+"RESET": SubResource("Animation_nq5c2")
+}
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8
@@ -22,5 +71,17 @@ script = ExtResource("1_h5g41")
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_dv4fy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_e78xd")
+[node name="Explosion" type="Sprite2D" parent="."]
+texture = ExtResource("3_qkqhk")
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ffgdp")
+}
+autoplay = "Explosion"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.4, 0.4)
+polygon = PackedVector2Array(15, -75, 18, -75, 18, -74, 21, -74, 21, -73, 24, -73, 24, -72, 27, -72, 27, -71, 29, -71, 29, -70, 32, -70, 32, -69, 34, -69, 34, -68, 35, -68, 35, -67, 37, -67, 37, -66, 39, -66, 39, -65, 41, -65, 41, -64, 43, -64, 43, -63, 44, -63, 44, -62, 45, -62, 45, -61, 46, -61, 46, -60, 48, -60, 48, -59, 49, -59, 49, -58, 50, -58, 50, -57, 51, -57, 51, -56, 53, -56, 53, -55, 54, -55, 54, -54, 55, -54, 55, -53, 56, -53, 56, -52, 57, -52, 57, -51, 58, -51, 58, -49, 59, -49, 59, -48, 60, -48, 60, -47, 61, -47, 61, -46, 62, -46, 62, -45, 63, -45, 63, -44, 64, -44, 64, -42, 65, -42, 65, -41, 66, -41, 66, -39, 67, -39, 67, -38, 68, -38, 68, -36, 73, -36, 73, -35, 74, -35, 74, -34, 75, -34, 75, -33, 76, -33, 76, -31, 77, -31, 77, -30, 78, -30, 78, -27, 79, -27, 79, -19, 78, -19, 78, -18, 77, -18, 77, -12, 78, -12, 78, -6, 79, -6, 79, 8, 78, 8, 78, 10, 79, 10, 79, 11, 78, 11, 78, 17, 77, 17, 77, 20, 76, 20, 76, 23, 75, 23, 75, 26, 74, 26, 74, 29, 73, 29, 73, 31, 72, 31, 72, 34, 71, 34, 71, 35, 70, 35, 70, 37, 69, 37, 69, 39, 68, 39, 68, 41, 67, 41, 67, 42, 66, 42, 66, 44, 65, 44, 65, 45, 64, 45, 64, 47, 63, 47, 63, 48, 62, 48, 62, 49, 61, 49, 61, 50, 60, 50, 60, 51, 59, 51, 59, 52, 58, 52, 58, 53, 57, 53, 57, 54, 56, 54, 56, 55, 55, 55, 55, 56, 54, 56, 54, 57, 53, 57, 53, 58, 52, 58, 52, 59, 51, 59, 51, 60, 49, 60, 49, 61, 48, 61, 48, 62, 47, 62, 47, 65, 46, 65, 46, 66, 45, 66, 45, 67, 44, 67, 44, 68, 43, 68, 43, 69, 42, 69, 42, 70, 40, 70, 40, 71, 38, 71, 38, 72, 36, 72, 36, 73, 34, 73, 34, 74, 31, 74, 31, 75, 26, 75, 26, 76, 23, 76, 23, 75, 21, 75, 21, 74, 20, 74, 20, 75, 16, 75, 16, 76, -12, 76, -12, 75, -18, 75, -18, 74, -21, 74, -21, 73, -24, 73, -24, 72, -27, 72, -27, 71, -29, 71, -29, 70, -32, 70, -32, 69, -35, 69, -35, 68, -36, 68, -36, 67, -38, 67, -38, 66, -40, 66, -40, 65, -41, 65, -41, 64, -43, 64, -43, 63, -44, 63, -44, 62, -46, 62, -46, 61, -47, 61, -47, 60, -48, 60, -48, 59, -50, 59, -50, 58, -51, 58, -51, 57, -52, 57, -52, 56, -53, 56, -53, 55, -54, 55, -54, 54, -55, 54, -55, 53, -56, 53, -56, 52, -57, 52, -57, 51, -58, 51, -58, 50, -59, 50, -59, 49, -60, 49, -60, 48, -61, 48, -61, 47, -62, 47, -62, 46, -63, 46, -63, 45, -67, 45, -67, 44, -68, 44, -68, 43, -69, 43, -69, 40, -70, 40, -70, 39, -71, 39, -71, 38, -72, 38, -72, 36, -73, 36, -73, 35, -74, 35, -74, 33, -75, 33, -75, 31, -76, 31, -76, 29, -77, 29, -77, 27, -78, 27, -78, 21, -77, 21, -77, 16, -78, 16, -78, 11, -79, 11, -79, -14, -78, -14, -78, -20, -77, -20, -77, -23, -76, -23, -76, -26, -75, -26, -75, -28, -74, -28, -74, -31, -73, -31, -73, -34, -72, -34, -72, -36, -71, -36, -71, -37, -70, -37, -70, -39, -69, -39, -69, -41, -68, -41, -68, -42, -67, -42, -67, -44, -66, -44, -66, -45, -65, -45, -65, -46, -64, -46, -64, -47, -63, -47, -63, -49, -62, -49, -62, -50, -61, -50, -61, -51, -60, -51, -60, -52, -59, -52, -59, -53, -58, -53, -58, -54, -57, -54, -57, -55, -56, -55, -56, -56, -55, -56, -55, -57, -54, -57, -54, -58, -53, -58, -53, -59, -52, -59, -52, -60, -50, -60, -50, -66, -49, -66, -49, -68, -48, -68, -48, -69, -47, -69, -47, -70, -45, -70, -45, -71, -44, -71, -44, -72, -42, -72, -42, -73, -40, -73, -40, -74, -35, -74, -35, -73, -33, -73, -33, -72, -29, -72, -29, -73, -26, -73, -26, -74, -23, -74, -23, -75, -19, -75, -19, -76, 15, -76)
