@@ -21,7 +21,4 @@ collision_layer = 16
 position = Vector2(64, 622)
 shape = SubResource("RectangleShape2D_giwtj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(1464, 713, 1351, 771, 493, 775, 498, 452, -365, 454, -369, 774, -1373, 709, -1428, -780, 1544, -794)
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
