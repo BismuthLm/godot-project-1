@@ -9,6 +9,36 @@
 friction = 10.0
 bounce = 0.4
 
+[sub_resource type="Animation" id="Animation_npy2h"]
+resource_name = "Blinking"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 11.0, 0.0, 11.0, 0.0, 11.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"expode"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_dsqif"]
 resource_name = "Explosion"
 length = 2.4
@@ -54,22 +84,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_npy2h"]
-resource_name = "Blinking"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 11.0, 0.0, 11.0, 0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ffgdp"]
 _data = {
 "Blinking": SubResource("Animation_npy2h"),
@@ -101,10 +115,10 @@ vframes = 8
 libraries = {
 "": SubResource("AnimationLibrary_ffgdp")
 }
-autoplay = "Explosion"
+autoplay = "Blinking"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.913725, 0, 0.160784, 1)
-energy = 0.0
+energy = 11.0
 texture = ExtResource("4_e0sjh")
 texture_scale = 0.03
