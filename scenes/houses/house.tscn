@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://bbc405gyv6iod"]
+[gd_scene load_steps=36 format=3 uid="uid://bbc405gyv6iod"]
 
+[ext_resource type="Script" path="res://scenes/houses/house.gd" id="1_ay6t1"]
 [ext_resource type="Texture2D" uid="uid://b4c0280m24mai" path="res://graphics/tilesets/interior.png" id="1_nwa51"]
 [ext_resource type="PackedScene" uid="uid://d1j06ddioymme" path="res://scenes/objects/simple_light.tscn" id="2_sor6k"]
 [ext_resource type="PackedScene" uid="uid://bgqlte3q8tfl8" path="res://scenes/objects/wall_light.tscn" id="3_gusxq"]
@@ -297,6 +298,7 @@ sources/0 = SubResource("TileSetAtlasSource_qqb84")
 
 [node name="House" type="Area2D"]
 collision_layer = 16
+script = ExtResource("1_ay6t1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1177, 148)
@@ -337,3 +339,5 @@ metadata/_edit_lock_ = true
 [node name="WallLight3" parent="." instance=ExtResource("3_gusxq")]
 position = Vector2(-9, 1203)
 metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
